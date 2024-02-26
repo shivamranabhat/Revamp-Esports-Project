@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body class="bg-[#030412]">
+    <section class="navbar fixed w-full z-10 backdrop-blur-sm">
+        <div class="nav-section flex p-2 md:p-6 justify-between items-center">
+            <div class="left-links flex gap-24 items-center justify-between">
+                <a href="index.html" class="logo text-white">
+                    <img src="assets/images/logo.svg" class="w-44" alt="logo">
+                </a>
+
+                <div class="tournament hidden lg:flex xl:flex gap-x-8">
+                    <a href="#" class="flex gap-x-3 navbar-btn cursor-pointer">
+                        <svg class="icon" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g id="Symbols_icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Icons-/-Devices-/-Gamepad#2">
+                                    <rect id="bound" x="0" y="0" width="24" height="24"></rect>
+                                    <path
+                                        d="M12.9486833,8.31622777 L11.0513167,7.68377223 C11.8160243,5.38964935 13.0426772,3.95855428 14.7574644,3.5298575 C15.650287,3.30665184 17,1.86951059 17,1 L19,1 C19,2.79715607 17.0163797,5.02668149 15.2425356,5.4701425 C14.2906561,5.70811238 13.517309,6.61035065 12.9486833,8.31622777 Z"
+                                        id="Path-21" fill="#fff" fill-rule="nonzero" opacity="0.3"></path>
+                                    <path
+                                        d="M7.8148632,6.99936183 L16.2056808,6.99938088 C17.560825,6.73055403 18.9499047,7.42822643 19.526457,8.72046451 L19.526457,8.72046451 L22.9501217,16.3939916 C23.4665806,17.5515411 23.1998005,18.9087734 22.2836331,19.7847233 L22.2836331,19.7847233 L21.8392372,20.2096113 L21.8392372,20.2096113 L21.7770321,20.2672042 C20.6904893,21.2412841 19.0200246,21.1501149 18.0459447,20.0635721 L18.0459447,20.0635721 L15.2987925,16.999049 L8.86379254,16.999049 L6.11808685,20.0635721 C5.14400696,21.1501149 3.47354224,21.2412841 2.38699945,20.2672042 C2.36595778,20.2483405 2.34522009,20.2291404 2.3247944,20.2096113 L1.85770343,19.7630245 C0.952705301,18.8977536 0.680264004,17.5614241 1.17430192,16.4109277 L4.46146538,8.75590867 C5.02802226,7.43653293 6.43886164,6.71871717 7.8148632,6.99936183 Z M8,10 C6.8954305,10 6,10.8954305 6,12 C6,13.1045695 6.8954305,14 8,14 C9.1045695,14 10,13.1045695 10,12 C10,10.8954305 9.1045695,10 8,10 Z M15,12 C14.4477153,12 14,12.4477153 14,13 C14,13.5522847 14.4477153,14 15,14 C15.5522847,14 16,13.5522847 16,13 C16,12.4477153 15.5522847,12 15,12 Z M17,10 C16.4477153,10 16,10.4477153 16,11 C16,11.5522847 16.4477153,12 17,12 C17.5522847,12 18,11.5522847 18,11 C18,10.4477153 17.5522847,10 17,10 Z"
+                                        id="Combined-Shape" fill="#fff"></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <p class="navbar-btn-txt text-white text-lg">Games</p>
+                    </a>
+                    <button class="flex gap-x-3 items-center navbar-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22"
+                            height="18" viewBox="0 0 22 18" fill="none">
+                            <g clip-path="url(#clip0_76_2)">
+                                <rect y="-3" width="24" height="24" fill="url(#pattern0)" />
+                            </g>
+                            <defs>
+                                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0_76_2" transform="scale(0.0111111)" />
+                                </pattern>
+                                <clipPath id="clip0_76_2">
+                                    <rect width="79" height="72" fill="white" />
+                                </clipPath>
+                                <image id="image0_76_2" width="90" height="90"
+                                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEiUlEQVR4nO2cTYhWVRjH75gmlhiGCukmskhqE7gN3OimhTshoo9NTCgTLd0UTYtATIgmxY9duBBMNGk5m+hLDWESFCybXYtMxgZ1+qDRX5zeJxind+57zrnPOfeemecH72Y+zvN//ve89znned97qsowDMMwDMMwDMMwDMMIBtgEbANeB/YBp4DvgRl5XZKf7ZO/cX+7qW2rgYeBo8A08AvwHvBAl82MpdWLABzvo+ntHIHXAluBXcAocBK4CNwiP38Ck8A48BEwDGwHngCWKeT6DHC3T9w7wAYdR+8P+CDwATBFOUwB+4EVDfI+UTP+AV2XewEPUC77I3N+GpitGfd34DFto69TLtcjc/7EY+wxbaOLpgrP193j//YY+i/gcTM63ugj+HPYjI43+ib+TJnRPX6KMDqIpWr0jKyr97p1cI58l5LRk7JhcZuVlbnzXcxG35Ad6XCKrXiomNYCJ2BWtvmu1/G8xvZaM9/WAiveDo5KT+URtWQS5Nta4EhuA2eBPcCTitqDZ3+o8BKMntQsYnP0rpd3gntH/Jw63y4afSNFEXONeGndjsq9/L7WZup8u2B0siJGrx8xLBduWtOIUoxOUsSAh+QW4y7alZRGdNXouTuxrWpBq3/jPivjjsunKVGUbHSWIoYSCvmqjl8XuJUipkWErqTj1wXWLGKbZa18VtbOyYnQmHT8JACrgZ3AIeAa+bkWoTmINM75L73ealrEllyb1EPYuhRFLIArsuwru01aU8TcrPk6VRGr4ddF2SYN3YklYFZWJaNygRdtm7SVIkavgLpCulotGb98g2gtsEKbdLOidmuTolzE5phrbVKsTVo7Q2KxNmkIgeZamzSWAcZam1SLjG3SddYmTVvE9qbcYUboSjp+7jbpZ9YmVWTeZ30XU8zYbDOua7TcJv0f1WKhA23SWqpS6UCbNITpqsDbwW4pYm08vBnL5aoUgPcpl2NKHiwDhjTGqguyg3J5IWB1dCjyQ43fgIPAKo178lXK4wffkwgCH3lbiCONjBYhL1MerwbcFtwjx02Zaby5EzFfUg5f+SbdKaNF0JaGZ2/kwpm2JTA3jVuH6lO0JdxCXonIaxXwsRS2UNyTtmONi2EfUe7sjq7yoXKufdGMURd8SOmtps1p7fOOFgqkGcNnyVd3QktuPncn5STIsy/acQaJWAGcoX2ONznSZ8ARRwuhflF9ZvZh2mMsxVfEgI3A+Zq47ncbteP6CHOdvHsZDb4HvJsoFzeTL3hoOJ99ZovAF4E/Mn19bFfCPN4I0DKcSscgkc8BPyY0+WrsF8wDcvg2QM83KbUMEroG+DTR8m1NBv0hR/3cTK3HR/CIUg/hjrydhzLpDnmI6VbVBaQ/8l0Dk13BeSqzZp9C+B/nqq4ALHcrBDknzhdXVN9x/9uC3jcDdI5UXYPeoapfeIgfzz2L5+lcCUx46JxoZXkX0Cd5TR74mY87n/mlqgPIEc11Zk904XzrgQCPSltySl7uS5Nrqw4hGxdX0M9JgbwtS7+Rzs5kwzAMwzAMwzAMwzCMKj3/AGrTdtY8czybAAAAAElFTkSuQmCC" />
+                            </defs>
+                        </svg>
+                        <p class="navbar-btn-txt text-white text-lg">Tournaments</p>
+                    </button>
+                    <a href="#" class="flex gap-x-3 navbar-btn hidden xl:flex">
+                        <svg class="small-icon" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g id="Symbols_icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Icons-/-leaderboard">
+                                    <rect id="bound" x="0" y="0" width="24" height="24"></rect>
+                                    <rect id="Rectangle-7" fill="#fff" x="2" y="13" width="6" height="9" rx="1">
+                                    </rect>
+                                    <rect id="Rectangle-7-Copy" fill="#fff" x="9" y="8" width="6" height="14" rx="1">
+                                    </rect>
+                                    <rect id="Rectangle-7-Copy" fill="#fff" x="16" y="15" width="6" height="7" rx="1">
+                                    </rect>
+                                    <path
+                                        d="M12,5 L10.6385399,5.71576194 C10.4755917,5.80142888 10.2740493,5.73878004 10.1883824,5.57583185 C10.1542693,5.51094502 10.1424978,5.43662233 10.1548901,5.36436978 L10.4149058,3.84836166 L9.31346143,2.77471874 C9.18163357,2.64621834 9.17893613,2.43518058 9.30743654,2.30335272 C9.35860607,2.25085818 9.42565354,2.21669578 9.49819922,2.20615428 L11.0203579,1.98497168 L11.701088,0.605661917 C11.7825621,0.440577364 11.9824374,0.372797697 12.1475219,0.454271795 C12.2132594,0.486715208 12.2664686,0.539924382 12.298912,0.605661917 L12.9796421,1.98497168 L14.5018008,2.20615428 C14.6839824,2.23262682 14.8102096,2.40177444 14.783737,2.58395606 C14.7731955,2.65650174 14.7390331,2.72354921 14.6865386,2.77471874 L13.5850942,3.84836166 L13.8451099,5.36436978 C13.8762303,5.54581527 13.7543677,5.71813391 13.5729222,5.74925425 C13.5006696,5.76164653 13.4263469,5.74987497 13.3614601,5.71576194 L12,5 Z"
+                                        id="Star" fill="#fff"></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <p class="navbar-btn-txt text-white text-lg">Leaderboard</p>
+                    </a>
+                    <button class="navbar-btn">
+                        <div class="nice-select">
+                            <span class="current single-item share flex items-center gap-x-3 relative" id="moreBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="4" height="16" viewBox="0 0 4 16" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2ZM0.5 8C0.5 7.17157 1.17157 6.5 2 6.5C2.82843 6.5 3.5 7.17157 3.5 8C3.5 8.82843 2.82843 9.5 2 9.5C1.17157 9.5 0.5 8.82843 0.5 8ZM0.5 14C0.5 13.1716 1.17157 12.5 2 12.5C2.82843 12.5 3.5 13.1716 3.5 14C3.5 14.8284 2.82843 15.5 2 15.5C1.17157 15.5 0.5 14.8284 0.5 14Z"
+                                        fill="white" />
+                                </svg>
+                                <p class="navbar-btn-txt text-white text-lg">More</p>
+                            </span>
+                            <ul class="nav-list p-4 absolute top-[70%] text-white rounded-lg border border-purple-300" id="moreList">
+                                <li class="text-white">Edit</li>
+                                <li>Participants</li>
+                                <li>Result</li>
+                            </ul>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="bars flex lg:hidden xl:hidden button-bg p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M0 1.25C0 0.835786 0.335786 0.5 0.75 0.5H17.25C17.6642 0.5 18 0.835786 18 1.25C18 1.66421 17.6642 2 17.25 2H0.75C0.335786 2 0 1.66421 0 1.25ZM0 5.75C0 5.33579 0.335786 5 0.75 5H17.25C17.6642 5 18 5.33579 18 5.75C18 6.16421 17.6642 6.5 17.25 6.5H0.75C0.335786 6.5 0 6.16421 0 5.75ZM0 10.25C0 9.83579 0.335786 9.5 0.75 9.5H17.25C17.6642 9.5 18 9.83579 18 10.25C18 10.6642 17.6642 11 17.25 11H0.75C0.335786 11 0 10.6642 0 10.25ZM0 14.75C0 14.3358 0.335786 14 0.75 14H17.25C17.6642 14 18 14.3358 18 14.75C18 15.1642 17.6642 15.5 17.25 15.5H0.75C0.335786 15.5 0 15.1642 0 14.75Z"
+                        fill="white" />
+                </svg>
+            </div>
+            <div class="account hidden lg:flex xl:flex gap-x-10 items-center text-white">
+                <div class="create button-bg px-4 py-2">
+                    <a href="#">Create Tournament</a>
+                </div>
+                <div class="sign flex gap-x-3">
+                    <a href="login.html" class="uppercase">Signin</a> |
+                    <a href="" class="uppercase">Signup</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="banner relative">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+            <div class="bg-[#000000] hidden lg:block"> </div>
+            <video id="hero-video" class="w-screen h-[40vh] md:h-[50vh] object-cover" autoplay muted loop>
+                <source src="assets/images/details.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="absolute bottom-[5%] left-0 right-0 flex items-center flex-col gap-y-1 md:gap-y-2 lg:gap-y-2">
+            <h1 class="text-white text-center text-xl md:text-5xl lg:text-5xl xl:text-5xl font-extrabold">Bash War</h1>
+            <p class="text-white text-center text-sm md:text-xl lg:text-2xl xl:text-2xl font-bold">Join the Ultimate
+                Esports Showdown</p>
+        </div>
+    </section>
+    <section class="nav flex items-center  px-10 lg:px-52 py-10">
+        <div class="container flex flex-col gap-y-3 mx-auto gradient-iii border border-purple-500 rounded-3xl p-3">
+            <div class="top-box grid grid-cols-10 gap-y-2 md:gap-y-0">
+                <div class="tournament-avatar flex justify-center col-span-10 md:col-span-1">
+                    <img src="assets/images/tournament.png" class="w-20 md:w-[60%] h-full object-cover" alt="banner">
+                </div>
+                <div
+                    class="top-container flex flex-col md:flex-row items-start md:items-center justify-between col-span-10 md:col-span-9 gap-4 md:gap-0">
+                    <div class="title flex flex-col gap-2">
+                        <h2 class="text-white text-xl md:text-4xl font-semibold">Foxtie Mash</h2>
+                        <div class="flex gap-x-4">
+                            <div class="date flex items-center gap-1 gradient-ii rounded-3xl p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="#fff" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                                </svg>
+                                <p class="text-white font-semibold">2024-01-03</p>
+                            </div>
+                            <div class="time flex items-center gap-1 gradient-ii rounded-3xl p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    fill="#fff" class="w-4 h-4" version="1.1" id="Capa_1" viewBox="0 0 297 297"
+                                    xml:space="preserve">
+                                    <path
+                                        d="M250.929,276.619h-17.463v-31.301c0-31.668-17.379-60.777-48.936-81.967c-3.924-2.635-6.363-8.324-6.363-14.852  s2.439-12.215,6.365-14.852c31.555-21.188,48.934-50.297,48.936-81.965V20.381h17.461c5.627,0,10.189-4.562,10.189-10.191  C261.118,4.561,256.556,0,250.929,0H46.071c-5.627,0-10.19,4.561-10.19,10.189c0,5.629,4.563,10.191,10.19,10.191h17.463v31.303  c0,31.668,17.377,60.777,48.936,81.965c3.924,2.637,6.363,8.324,6.363,14.852c0,6.529-2.439,12.217-6.365,14.854  c-31.557,21.188-48.934,50.297-48.934,81.965v31.301H46.071c-5.627,0-10.19,4.563-10.19,10.191c0,5.629,4.563,10.19,10.19,10.19  h204.857c5.627,0,10.189-4.56,10.189-10.19C261.118,281.182,256.556,276.619,250.929,276.619z M83.915,245.318  c0-33.275,25.006-55.035,39.914-65.043c9.633-6.467,15.385-18.346,15.385-31.775c0-13.428-5.752-25.307-15.385-31.773  c-14.908-10.008-39.914-31.768-39.914-65.043V20.381h129.17l-0.002,31.303c0,33.275-25.006,55.035-39.912,65.041  c-9.635,6.469-15.387,18.348-15.387,31.775c0,13.43,5.752,25.307,15.385,31.775c14.908,10.008,39.914,31.768,39.916,65.043v31.301  H83.915V245.318z" />
+                                </svg>
+                                <p class="text-white font-semibold">10:15:02</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="entry-fee flex  items-center gap-x-4">
+                        <a href="#"
+                            class="block flex justify-center items-center gap-x-2 gradient-ii w-full py-2 px-4 rounded-3xl text-white">
+                            <svg class="w-6 h-6" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M31 21.5H29V15.5C29 14.9 28.6 14.5 28 14.5H17V10.5H21C21.6 10.5 22 10.1 22 9.5V1.5C22 0.9 21.6 0.5 21 0.5H11C10.4 0.5 10 0.9 10 1.5V9.5C10 10.1 10.4 10.5 11 10.5H15V14.5H4C3.4 14.5 3 14.9 3 15.5V21.5H1C0.4 21.5 0 21.9 0 22.5V28.5C0 29.1 0.4 29.5 1 29.5H7C7.6 29.5 8 29.1 8 28.5V22.5C8 21.9 7.6 21.5 7 21.5H5V16.5H15V21.5H13C12.4 21.5 12 21.9 12 22.5V28.5C12 29.1 12.4 29.5 13 29.5H19C19.6 29.5 20 29.1 20 28.5V22.5C20 21.9 19.6 21.5 19 21.5H17V16.5H27V21.5H25C24.4 21.5 24 21.9 24 22.5V28.5C24 29.1 24.4 29.5 25 29.5H31C31.6 29.5 32 29.1 32 28.5V22.5C32 21.9 31.6 21.5 31 21.5ZM12 2.5H20V8.5H12V2.5ZM6 27.5H2V23.5H6V27.5ZM18 27.5H14V23.5H18V27.5ZM30 27.5H26V23.5H30V27.5Z"
+                                    fill="white" />
+                            </svg>
+                            <p class="text-whitefont-semibold">Squad</p>
+                        </a>
+                        <a href="#"
+                            class="block flex justify-center items-center gap-x-2 gradient-ii w-full py-2 px-4 rounded-3xl text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="#fff" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z">
+                                </path>
+                            </svg>
+                            <p class="text-whitefont-semibold">$10</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border border-purple-300 h-[1px] opacity-20"></div>
+            <div class="nav-box flex gap-x-8 pr-3">
+                <a class="overview-tab cursor-pointer text-white px-2 py-1 rounded-3xl text-lg" id="overview-tab">Overview</a>
+                <div class="border border-purple-300 h-8 opacity-20"></div>
+                <a class="text-white participants-tab cursor-pointer px-2 py-1 rounded-3xl text-lg" id="participants-tab">Participants</a>
+            </div>
+        </div>
+    </section>
+    <section id="overview" class="overview grid grid-cols-6 gap-2 px-10 lg:px-52">
+        <div class="left-col col-span-6 md:col-span-4">
+            <div class="details-container flex flex-col gap-y-4 px-0 py-5">
+                <h5 class="text-white text-3xl font-semibold">Format</h5>
+                <div class="details-box grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
+                    <div class="box flex flex-col items-center gradient-iii border border-purple-500 rounded-3xl py-2">
+                        <svg fill="#fff" class="h-10 w-10" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 59 59" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M44.246,27.028H31v-11.5c0-1.93,1.57-3.5,3.5-3.5s3.5,1.57,3.5,3.5v3.5c0,2.757,2.243,5,5,5s5-2.243,5-5v-16
+                c0-0.553-0.448-1-1-1s-1,0.447-1,1v16c0,1.654-1.346,3-3,3s-3-1.346-3-3v-3.5c0-3.032-2.467-5.5-5.5-5.5s-5.5,2.468-5.5,5.5v11.5
+                H14.972C6.716,27.028,0,33.743,0,42c0,7.149,5.209,14.872,12.963,14.972c0.069,0.001,0.14,0.001,0.213,0.001
+                c2.072,0,5.679-0.354,9.378-1.367c4.359-1.194,9.764-1.195,14.107-0.001c3.952,1.087,8.169,1.381,9.596,1.367l0,0
+                C52.386,56.867,59,51.112,59,42C59,33.743,52.381,27.028,44.246,27.028z M46.225,54.971c-1.278,0.021-5.327-0.276-9.033-1.295
+                c-4.669-1.285-10.481-1.284-15.166-0.001c-3.629,0.994-7.12,1.317-9.038,1.296C7.682,54.903,2,49.674,2,42
+                c0-7.152,5.819-12.972,12.972-12.972h29.274C51.278,29.028,57,34.847,57,42C57,48.174,52.67,54.861,46.225,54.971z" />
+                                    <path d="M33.631,32.028c0-0.553-0.448-1-1-1H28c-0.552,0-1,0.447-1,1c0,0.553,0.448,1,1,1h4.631
+                C33.184,33.028,33.631,32.581,33.631,32.028z" />
+                                    <path d="M37,38.028c-2.206,0-4,1.794-4,4s1.794,4,4,4s4-1.794,4-4S39.206,38.028,37,38.028z M37,44.028c-1.103,0-2-0.897-2-2
+                s0.897-2,2-2s2,0.897,2,2S38.103,44.028,37,44.028z" />
+                                    <path d="M51,38.028c-2.206,0-4,1.794-4,4s1.794,4,4,4s4-1.794,4-4S53.206,38.028,51,38.028z M51,44.028c-1.103,0-2-0.897-2-2
+                s0.897-2,2-2s2,0.897,2,2S52.103,44.028,51,44.028z" />
+                                    <path d="M44,45.028c-2.206,0-4,1.794-4,4s1.794,4,4,4s4-1.794,4-4S46.206,45.028,44,45.028z M44,51.028c-1.103,0-2-0.897-2-2
+                s0.897-2,2-2s2,0.897,2,2S45.103,51.028,44,51.028z" />
+                                    <path d="M44,39.028c2.206,0,4-1.794,4-4s-1.794-4-4-4s-4,1.794-4,4S41.794,39.028,44,39.028z M44,33.028c1.103,0,2,0.897,2,2
+                s-0.897,2-2,2s-2-0.897-2-2S42.897,33.028,44,33.028z" />
+                                    <path
+                                        d="M23,38.028h-3v-3c0-0.553-0.448-1-1-1h-6c-0.552,0-1,0.447-1,1v3H9c-0.552,0-1,0.447-1,1v6c0,0.553,0.448,1,1,1h3v3
+                c0,0.553,0.448,1,1,1h6c0.552,0,1-0.447,1-1v-3h3c0.552,0,1-0.447,1-1v-6C24,38.474,23.552,38.028,23,38.028z M22,44.028h-3
+                c-0.552,0-1,0.447-1,1v3h-4v-3c0-0.553-0.448-1-1-1h-3v-4h3c0.552,0,1-0.447,1-1v-3h4v3c0,0.553,0.448,1,1,1h3V44.028z" />
+                                </g>
+                            </g>
+                        </svg>
+                        <h5 class="text-lg text-white mb-2">Game</h5>
+                        <p class="text-purple-300 text-lg">Freefire</p>
+                    </div>
+                    <div class="box flex flex-col items-center gradient-iii border border-purple-500 rounded-3xl py-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="#fff" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                        </svg>
+
+                        <h5 class="text-lg text-white mb-2">Team Size</h5>
+                        <p class="text-purple-300 text-lg">12</p>
+                    </div>
+                    <div class="box flex flex-col items-center gradient-iii border border-purple-500 rounded-3xl py-2">
+                        <svg fill="#fff" class="w-8 h-8" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <g>
+                                        <path d="M119.467,341.333c0-4.71-3.823-8.533-8.533-8.533s-8.533,3.823-8.533,8.533c-4.71,0-8.533,3.823-8.533,8.533
+                                   s3.823,8.533,8.533,8.533c0,4.71,3.823,8.533,8.533,8.533s8.533-3.823,8.533-8.533c4.71,0,8.533-3.823,8.533-8.533
+                                   S124.177,341.333,119.467,341.333z" />
+                                        <path
+                                            d="M42.667,307.2h-8.533v-8.533c0-4.71-3.823-8.533-8.533-8.533c-4.71,0-8.533,3.823-8.533,8.533v8.533H8.533
+                                   c-4.71,0-8.533,3.823-8.533,8.533s3.823,8.533,8.533,8.533h8.533v8.533c0,4.71,3.823,8.533,8.533,8.533
+                                   c4.71,0,8.533-3.823,8.533-8.533v-8.533h8.533c4.71,0,8.533-3.823,8.533-8.533S47.377,307.2,42.667,307.2z" />
+                                        <path d="M418.125,187.733c0.691,0,1.382-0.077,2.082-0.256c37.18-9.293,57.66-33.451,57.66-68.011V59.733
+                                   c0-14.114-11.486-25.6-25.6-25.6H435.2c-4.71,0-8.533,3.823-8.533,8.533c0,4.71,3.823,8.533,8.533,8.533h17.067
+                                   c4.702,0,8.533,3.831,8.533,8.533v59.733c0,26.718-15.053,44.032-44.74,51.456c-4.565,1.143-7.347,5.777-6.204,10.351
+                                   C410.829,185.148,414.302,187.733,418.125,187.733z" />
+                                        <path d="M298.138,460.8h-84.804c-4.71,0-8.533,3.823-8.533,8.533s3.823,8.533,8.533,8.533h84.804c4.71,0,8.533-3.823,8.533-8.533
+                                   S302.848,460.8,298.138,460.8z" />
+                                        <path d="M102.144,181.274c1.143-4.574-1.638-9.207-6.204-10.351c-29.687-7.424-44.74-24.738-44.74-51.456V59.733
+                                   c0-4.702,3.831-8.533,8.533-8.533H76.8c4.71,0,8.533-3.823,8.533-8.533c0-4.71-3.823-8.533-8.533-8.533H59.733
+                                   c-14.114,0-25.6,11.486-25.6,25.6v59.733c0,34.56,20.48,58.718,57.66,68.011c0.7,0.179,1.391,0.256,2.082,0.256
+                                   C97.698,187.733,101.171,185.148,102.144,181.274z" />
+                                        <path
+                                            d="M358.144,433.126c-0.947-3.797-4.361-6.46-8.277-6.46h-188.8c-3.917,0-7.33,2.662-8.277,6.46l-17.067,68.267
+                                   c-0.64,2.552-0.068,5.257,1.553,7.322c1.613,2.074,4.096,3.285,6.724,3.285h222.933c2.628,0,5.111-1.212,6.724-3.285
+                                   c1.621-2.065,2.193-4.77,1.553-7.322L358.144,433.126z M154.931,494.933l12.8-51.2h175.471l12.8,51.2H154.931z" />
+                                        <path d="M452.267,392.533h-8.533V384c0-4.71-3.823-8.533-8.533-8.533s-8.533,3.823-8.533,8.533v8.533h-8.533
+                                   c-4.71,0-8.533,3.823-8.533,8.533s3.823,8.533,8.533,8.533h8.533v8.533c0,4.71,3.823,8.533,8.533,8.533s8.533-3.823,8.533-8.533
+                                   V409.6h8.533c4.71,0,8.533-3.823,8.533-8.533S456.977,392.533,452.267,392.533z" />
+                                        <path d="M503.467,221.867H486.4V204.8c0-4.71-3.823-8.533-8.533-8.533s-8.533,3.823-8.533,8.533v17.067h-17.067
+                                   c-4.71,0-8.533,3.823-8.533,8.533s3.823,8.533,8.533,8.533h17.067V256c0,4.71,3.823,8.533,8.533,8.533S486.4,260.71,486.4,256
+                                   v-17.067h17.067c4.71,0,8.533-3.823,8.533-8.533S508.177,221.867,503.467,221.867z" />
+                                        <path d="M409.6,8.533c0-4.71-3.823-8.533-8.533-8.533H110.933c-4.71,0-8.533,3.823-8.533,8.533v34.133
+                                   c0,103.228,17.237,138.88,17.758,139.895c9.719,22.673,23.987,38.306,37.777,53.436c24.107,26.419,46.865,51.371,46.865,113.869
+                                   c0,0.23-0.179,23.287-15.633,46.464c-2.611,3.925-1.553,9.225,2.364,11.836c3.917,2.611,9.216,1.553,11.836-2.364
+                                   c18.295-27.435,18.5-54.784,18.5-55.936c0-69.111-26.095-97.715-51.32-125.372c-13.431-14.72-26.12-28.629-34.893-49.058
+                                   c-0.162-0.333-16.188-34.62-16.188-132.77v-25.6h273.067v25.6c0,98.15-16.026,132.437-16.375,133.171
+                                   c-8.585,20.028-21.274,33.937-34.705,48.657c-25.225,27.657-51.319,56.26-51.319,125.372c0,1.152,0.205,28.501,18.5,55.936
+                                   c1.647,2.466,4.352,3.797,7.108,3.797c1.621,0,3.268-0.461,4.727-1.434c3.917-2.611,4.975-7.91,2.364-11.836
+                                   c-15.309-22.963-15.633-46.259-15.633-46.464c0-62.498,22.758-87.45,46.865-113.869c13.79-15.13,28.058-30.763,37.572-52.983
+                                   c0.725-1.468,17.963-37.12,17.963-140.348V8.533z" />
+                                        <path d="M216.166,177.015c1.596,1.442,3.635,2.185,5.7,2.185c1.357,0,2.714-0.324,3.959-0.973l30.788-16.145l29.431,16.068
+                                   c3.098,1.698,6.921,1.297,9.617-0.981c2.688-2.287,3.695-5.999,2.517-9.335l-10.317-29.303l24.858-21.086
+                                   c2.731-2.321,3.721-6.093,2.492-9.455c-1.237-3.354-4.437-5.589-8.013-5.589h-30.234l-13.193-29.124
+                                   c-1.382-3.055-4.42-5.009-7.774-5.009h-0.017c-3.362,0.009-6.4,1.98-7.774,5.043l-13.022,29.09H204.8
+                                   c-3.627,0-6.852,2.295-8.055,5.709c-1.195,3.422-0.102,7.228,2.731,9.489l26.001,20.779l-11.546,29.15
+                                   C212.625,170.846,213.513,174.626,216.166,177.015z M240.717,119.467c3.362,0,6.409-1.971,7.791-5.043l7.535-16.845l7.654,16.879
+                                   c1.374,3.055,4.42,5.009,7.774,5.009h12.484l-11.605,9.847c-2.697,2.287-3.712,5.999-2.534,9.344l4.881,13.85l-13.901-7.595
+                                   c-1.28-0.691-2.688-1.041-4.096-1.041c-1.357,0-2.722,0.324-3.959,0.973l-14.481,7.586l5.41-13.645
+                                   c1.382-3.49,0.324-7.467-2.611-9.805l-11.904-9.515H240.717z" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <h5 class="text-lg text-white mb-2">Prize Pool</h5>
+                        <p class="text-purple-300 text-lg">$200</p>
+                    </div>
+                    <div class="box flex flex-col items-center gradient-iii border border-purple-500 rounded-3xl py-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="#fff" class="w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                        </svg>
+                        <h5 class="text-lg text-white mb-2">Check-In Time</h5>
+                        <p class="text-purple-300 text-lg">15min before start</p>
+                    </div>
+                </div>
+            </div>
+            <form
+                class="w-full flex flex-col gap-4 md:gap-8 md:gap-10 gradient-iii border border-purple-500 rounded-3xl p-8 md:p-10 mx-auto">
+                <div class="title">
+                    <h1 class="text-xl md:text-4xl font-bold text-white uppercase">Book Now</h1>
+                    <p class="text-sm md:text-base text-stone-200">Team up with your friends and get in the tournament
+                        now!</p>
+                </div>
+                <div class="form-box grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="input-box flex flex-col gap-y-1">
+                        <label for="team_name" class="text-white font-semibold ml-4">Team Name</label>
+                        <input type="text" id="default-search" id="team_name" name="team_name"
+                            class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent" />
+                    </div>
+                    <div class="input-box flex flex-col gap-y-1">
+                        <label for="leader" class="text-white font-semibold ml-4">Leader</label>
+                        <input type="text" id="default-search" id="leader" name="leader"
+                            class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent" />
+                    </div>
+
+                </div>
+                <div class="form-box grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="input-box flex flex-col gap-y-1">
+                        <label for="player 1" class="text-white font-semibold ml-4">Player A</label>
+                        <input type="text" id="default-search" id="player 1" name="player 1"
+                            class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent" />
+                    </div>
+                    <div class="input-box flex flex-col gap-y-1">
+                        <label for="player 2" class="text-white font-semibold ml-4">Player B</label>
+                        <input type="text" id="default-search" id="player 2" name="player 2"
+                            class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent" />
+                    </div>
+
+                </div>
+                <div class="form-box grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="input-box flex flex-col gap-y-1">
+                        <label for="player 3" class="text-white font-semibold ml-4">Player C</label>
+                        <input type="text" id="default-search" id="player 3" name="player 3"
+                            class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent" />
+                    </div>
+                    <div class="input-box flex flex-col gap-y-1">
+                        <label for="player 4" class="text-white font-semibold ml-4">Player D</label>
+                        <input type="text" id="default-search" id="player 4" name="player 4"
+                            class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent" />
+                    </div>
+
+                </div>
+
+                <button class="button-bg text-white py-2 md:py-3 text-base md:text-lg">
+                    Book Now
+                </button>
+
+            </form>
+        </div>
+        <div class="right-col flex flex-col col-span-6 md:col-span-2">
+            <div class="right-top-container flex flex-col gap-y-4 px-3 py-5">
+                <h5 class="text-white text-3xl font-semibold">Participants</h5>
+                <div
+                    class="participant-box flex flex-col gap-y-4 gradient-iii border border-purple-500 rounded-3xl px-3 py-5">
+                    <div class="top flex justify-between">
+                        <p class="text-white text-lg">Registered</p>
+                        <p class="text-purple-300 text-lg">1</p>
+                    </div>
+                    <div class="border border-purple-300 h-[1px] opacity-20"></div>
+                    <div class="top flex justify-between">
+                        <p class="text-white text-lg">Available</p>
+                        <p class="text-purple-300 text-lg">12</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-bottom-container flex flex-col gap-y-4 px-3 pb-5">
+                <h5 class="text-white text-3xl font-semibold">Prizes</h5>
+                <div
+                    class="prize-box flex flex-col gap-y-4 gradient-iii border border-purple-500 rounded-3xl px-3 py-5">
+                    <div class="top flex justify-center">
+                        <img src="assets/images/medal.png" class="w-20 h-20" alt="1st-prize">
+                    </div>
+                    <div class="border border-purple-300 h-[1px] opacity-20"></div>
+                    <div class="top flex justify-between">
+                        <p class="text-white text-lg">1st Prize</p>
+                        <p class="text-purple-300 text-lg">$3000</p>
+                    </div>
+                </div>
+                <div
+                    class="prize-box flex flex-col gap-y-4 gradient-iii border border-purple-500 rounded-3xl px-3 py-5">
+                    <div class="top flex justify-center">
+                        <img src="assets/images/medal2.png" class="w-20 h-20" alt="2nd-prize">
+                    </div>
+                    <div class="border border-purple-300 h-[1px] opacity-20"></div>
+                    <div class="top flex justify-between">
+                        <p class="text-white text-lg">2nd Prize</p>
+                        <p class="text-purple-300 text-lg">$3000</p>
+                    </div>
+                </div>
+                <div
+                    class="prize-box flex flex-col gap-y-4 gradient-iii border border-purple-500 rounded-3xl px-3 py-5">
+                    <div class="top flex justify-center">
+                        <img src="assets/images/medal3.png" class="w-20 h-20" alt="3rd-prize">
+                    </div>
+                    <div class="border border-purple-300 h-[1px] opacity-20"></div>
+                    <div class="top flex justify-between">
+                        <p class="text-white text-lg">3rd Prize</p>
+                        <p class="text-purple-300 text-lg">$3000</p>
+                    </div>
+                </div>
+                <h5 class="text-white text-2xl font-semibold">Admin</h5>
+                <div
+                    class="host-box flex items-center justify-between gradient-iii border border-purple-500 rounded-3xl p-4">
+                    <div class="left-col flex items-center gap-x-3">
+                        <img src="assets/images/tournament.png" class="w-12 h-12 object-cover rounded-full"
+                        alt="admin-avatar">
+                    <div class="admin-details flex flex-col justify-between">
+                        <p class="text-white text-lg">Shivam Ranabhat</p>
+                        <p class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="#fff" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="#fff" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="#fff" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="#fff" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="#fff" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                            </svg>
+
+                        </p>
+                    </div>
+                    </div>
+                    <div class="options">
+                        <span class="current single-item cursor-pointer flex items-center gap-x-3 relative" id="dot">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="4" height="16" viewBox="0 0 4 16" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2ZM0.5 8C0.5 7.17157 1.17157 6.5 2 6.5C2.82843 6.5 3.5 7.17157 3.5 8C3.5 8.82843 2.82843 9.5 2 9.5C1.17157 9.5 0.5 8.82843 0.5 8ZM0.5 14C0.5 13.1716 1.17157 12.5 2 12.5C2.82843 12.5 3.5 13.1716 3.5 14C3.5 14.8284 2.82843 15.5 2 15.5C1.17157 15.5 0.5 14.8284 0.5 14Z"
+                                    fill="white" />
+                            </svg>
+                            <ul class="list p-4 absolute top-[30%] right-0 bg-[#070A26] text-white rounded-lg border border-purple-500" id="list">
+                                <li class="text-white cursor-pointer">
+                                    <a href="#" class="flex gap-x-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                                  </svg>
+                                  Reviews</a>
+                                </li>
+                            </ul>
+                        </span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="participants" class="participants px-10 lg:px-52">
+        <div class="container mx-auto">
+            <div class="right-top-container flex flex-col gap-y-4 px-3 py-5">
+                <h5 class="text-white text-3xl font-semibold">Participants <span class="text-white text-sm">(10)</span>
+                </h5>
+                <div class="participant-box flex gap-x-4 items-center border-y border-purple-500 border-opacity-20 px-3 py-5">
+                    <img src="assets/images/tournament.png" class="w-14 h-14 rounded-full object-cover" alt="team-logo">
+                    <div class="team-name flex flex-col">
+                        <h5 class="text-white text-lg text-semibold">Team Howlers</h5>
+                        <p class="text-purple-300 text-sm">Captain: Shivam Ranabhat</p>
+                    </div>
+                </div>
+                <div class="participant-box flex gap-x-4 items-center border-y border-purple-500 border-opacity-20 px-3 py-5">
+                    <img src="assets/images/tournament.png" class="w-14 h-14 rounded-full object-cover" alt="team-logo">
+                    <div class="team-name flex flex-col">
+                        <h5 class="text-white text-lg text-semibold">Team Howlers</h5>
+                        <p class="text-purple-300 text-sm">Captain: Shivam Ranabhat</p>
+                    </div>
+                </div>
+                <div class="participant-box flex gap-x-4 items-center border-y border-purple-500 border-opacity-20 px-3 py-5">
+                    <img src="assets/images/tournament.png" class="w-14 h-14 rounded-full object-cover" alt="team-logo">
+                    <div class="team-name flex flex-col">
+                        <h5 class="text-white text-lg text-semibold">Team Howlers</h5>
+                        <p class="text-purple-300 text-sm">Captain: Shivam Ranabhat</p>
+                    </div>
+                </div>
+                <div class="participant-box flex gap-x-4 items-center border-y border-purple-500 border-opacity-20 px-3 py-5">
+                    <img src="assets/images/tournament.png" class="w-14 h-14 rounded-full object-cover" alt="team-logo">
+                    <div class="team-name flex flex-col">
+                        <h5 class="text-white text-lg text-semibold">Team Howlers</h5>
+                        <p class="text-purple-300 text-sm">Captain: Shivam Ranabhat</p>
+                    </div>
+                </div>
+                <div class="participant-box flex gap-x-4 items-center border-y border-purple-500 border-opacity-20 px-3 py-5">
+                    <img src="assets/images/tournament.png" class="w-14 h-14 rounded-full object-cover" alt="team-logo">
+                    <div class="team-name flex flex-col">
+                        <h5 class="text-white text-lg text-semibold">Team Howlers</h5>
+                        <p class="text-purple-300 text-sm">Captain: Shivam Ranabhat</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination mt-4 flex gap-2 flex-wrap justify-center">
+                <a href="./programs.html"
+                    class="px-6 py-3 flex items-center justify-center button-bg text-white font-bold rounded-full hover:bg-none hover:text-white hover:border-orange-700 hover:transition hover:duration">Load
+                    More</a>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
