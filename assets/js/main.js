@@ -4,6 +4,28 @@ $(document).ready(function (){
         event.stopPropagation();
         $('#moreList').slideToggle();
       });
+
+      $(".dot").click(function(event) {
+        var list = $(this).children(".list");
+        $(".list").not(list).removeClass("show");
+        list.toggleClass("show");
+    });
+    
+    $("#overview-nav-box").click(function(event) {
+        $('#overview-box').slideToggle();
+        $('#chevron-1').addClass("transition");
+        $('#chevron-1').toggleClass("rotate");
+      });
+    $("#team-nav-box").click(function(event) {
+        $('#team-member-box').slideToggle();
+        $('#chevron-2').addClass("transition");
+        $('#chevron-2').toggleClass("rotate");
+      });
+    $("#tournament-nav-box").click(function(event) {
+        $('#tournament-box').slideToggle();
+        $('#chevron-3').addClass("transition");
+        $('#chevron-3').toggleClass("rotate");
+      });
 })
 
 document.addEventListener("DOMContentLoaded", function () {

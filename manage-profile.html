@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body class="bg-[#030412]">
+    <section class="navbar fixed w-full z-10 backdrop-blur-sm">
+        <div class="nav-section flex p-2 md:p-6 justify-between items-center">
+            <div class="left-links flex gap-24 items-center justify-between">
+                <a href="index.html" class="logo text-white">
+                    <img src="assets/images/logo.svg" class="w-44" alt="logo">
+                </a>
+
+                <div class="tournament hidden lg:flex xl:flex gap-x-8">
+                    <a href="#" class="flex gap-x-3 navbar-btn cursor-pointer">
+                        <svg class="icon" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g id="Symbols_icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Icons-/-Devices-/-Gamepad#2">
+                                    <rect id="bound" x="0" y="0" width="24" height="24"></rect>
+                                    <path
+                                        d="M12.9486833,8.31622777 L11.0513167,7.68377223 C11.8160243,5.38964935 13.0426772,3.95855428 14.7574644,3.5298575 C15.650287,3.30665184 17,1.86951059 17,1 L19,1 C19,2.79715607 17.0163797,5.02668149 15.2425356,5.4701425 C14.2906561,5.70811238 13.517309,6.61035065 12.9486833,8.31622777 Z"
+                                        id="Path-21" fill="#fff" fill-rule="nonzero" opacity="0.3"></path>
+                                    <path
+                                        d="M7.8148632,6.99936183 L16.2056808,6.99938088 C17.560825,6.73055403 18.9499047,7.42822643 19.526457,8.72046451 L19.526457,8.72046451 L22.9501217,16.3939916 C23.4665806,17.5515411 23.1998005,18.9087734 22.2836331,19.7847233 L22.2836331,19.7847233 L21.8392372,20.2096113 L21.8392372,20.2096113 L21.7770321,20.2672042 C20.6904893,21.2412841 19.0200246,21.1501149 18.0459447,20.0635721 L18.0459447,20.0635721 L15.2987925,16.999049 L8.86379254,16.999049 L6.11808685,20.0635721 C5.14400696,21.1501149 3.47354224,21.2412841 2.38699945,20.2672042 C2.36595778,20.2483405 2.34522009,20.2291404 2.3247944,20.2096113 L1.85770343,19.7630245 C0.952705301,18.8977536 0.680264004,17.5614241 1.17430192,16.4109277 L4.46146538,8.75590867 C5.02802226,7.43653293 6.43886164,6.71871717 7.8148632,6.99936183 Z M8,10 C6.8954305,10 6,10.8954305 6,12 C6,13.1045695 6.8954305,14 8,14 C9.1045695,14 10,13.1045695 10,12 C10,10.8954305 9.1045695,10 8,10 Z M15,12 C14.4477153,12 14,12.4477153 14,13 C14,13.5522847 14.4477153,14 15,14 C15.5522847,14 16,13.5522847 16,13 C16,12.4477153 15.5522847,12 15,12 Z M17,10 C16.4477153,10 16,10.4477153 16,11 C16,11.5522847 16.4477153,12 17,12 C17.5522847,12 18,11.5522847 18,11 C18,10.4477153 17.5522847,10 17,10 Z"
+                                        id="Combined-Shape" fill="#fff"></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <p class="navbar-btn-txt text-white text-lg">Games</p>
+                    </a>
+                    <button class="flex gap-x-3 items-center navbar-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22"
+                            height="18" viewBox="0 0 22 18" fill="none">
+                            <g clip-path="url(#clip0_76_2)">
+                                <rect y="-3" width="24" height="24" fill="url(#pattern0)" />
+                            </g>
+                            <defs>
+                                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0_76_2" transform="scale(0.0111111)" />
+                                </pattern>
+                                <clipPath id="clip0_76_2">
+                                    <rect width="79" height="72" fill="white" />
+                                </clipPath>
+                                <image id="image0_76_2" width="90" height="90"
+                                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEiUlEQVR4nO2cTYhWVRjH75gmlhiGCukmskhqE7gN3OimhTshoo9NTCgTLd0UTYtATIgmxY9duBBMNGk5m+hLDWESFCybXYtMxgZ1+qDRX5zeJxind+57zrnPOfeemecH72Y+zvN//ve89znned97qsowDMMwDMMwDMMwDMMIBtgEbANeB/YBp4DvgRl5XZKf7ZO/cX+7qW2rgYeBo8A08AvwHvBAl82MpdWLABzvo+ntHIHXAluBXcAocBK4CNwiP38Ck8A48BEwDGwHngCWKeT6DHC3T9w7wAYdR+8P+CDwATBFOUwB+4EVDfI+UTP+AV2XewEPUC77I3N+GpitGfd34DFto69TLtcjc/7EY+wxbaOLpgrP193j//YY+i/gcTM63ugj+HPYjI43+ib+TJnRPX6KMDqIpWr0jKyr97p1cI58l5LRk7JhcZuVlbnzXcxG35Ad6XCKrXiomNYCJ2BWtvmu1/G8xvZaM9/WAiveDo5KT+URtWQS5Nta4EhuA2eBPcCTitqDZ3+o8BKMntQsYnP0rpd3gntH/Jw63y4afSNFEXONeGndjsq9/L7WZup8u2B0siJGrx8xLBduWtOIUoxOUsSAh+QW4y7alZRGdNXouTuxrWpBq3/jPivjjsunKVGUbHSWIoYSCvmqjl8XuJUipkWErqTj1wXWLGKbZa18VtbOyYnQmHT8JACrgZ3AIeAa+bkWoTmINM75L73ealrEllyb1EPYuhRFLIArsuwru01aU8TcrPk6VRGr4ddF2SYN3YklYFZWJaNygRdtm7SVIkavgLpCulotGb98g2gtsEKbdLOidmuTolzE5phrbVKsTVo7Q2KxNmkIgeZamzSWAcZam1SLjG3SddYmTVvE9qbcYUboSjp+7jbpZ9YmVWTeZ30XU8zYbDOua7TcJv0f1WKhA23SWqpS6UCbNITpqsDbwW4pYm08vBnL5aoUgPcpl2NKHiwDhjTGqguyg3J5IWB1dCjyQ43fgIPAKo178lXK4wffkwgCH3lbiCONjBYhL1MerwbcFtwjx02Zaby5EzFfUg5f+SbdKaNF0JaGZ2/kwpm2JTA3jVuH6lO0JdxCXonIaxXwsRS2UNyTtmONi2EfUe7sjq7yoXKufdGMURd8SOmtps1p7fOOFgqkGcNnyVd3QktuPncn5STIsy/acQaJWAGcoX2ONznSZ8ARRwuhflF9ZvZh2mMsxVfEgI3A+Zq47ncbteP6CHOdvHsZDb4HvJsoFzeTL3hoOJ99ZovAF4E/Mn19bFfCPN4I0DKcSscgkc8BPyY0+WrsF8wDcvg2QM83KbUMEroG+DTR8m1NBv0hR/3cTK3HR/CIUg/hjrydhzLpDnmI6VbVBaQ/8l0Dk13BeSqzZp9C+B/nqq4ALHcrBDknzhdXVN9x/9uC3jcDdI5UXYPeoapfeIgfzz2L5+lcCUx46JxoZXkX0Cd5TR74mY87n/mlqgPIEc11Zk904XzrgQCPSltySl7uS5Nrqw4hGxdX0M9JgbwtS7+Rzs5kwzAMwzAMwzAMwzCMKj3/AGrTdtY8czybAAAAAElFTkSuQmCC" />
+                            </defs>
+                        </svg>
+                        <p class="navbar-btn-txt text-white text-lg">Tournaments</p>
+                    </button>
+                    <a href="#" class="flex gap-x-3 navbar-btn hidden xl:flex">
+                        <svg class="small-icon" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g id="Symbols_icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Icons-/-leaderboard">
+                                    <rect id="bound" x="0" y="0" width="24" height="24"></rect>
+                                    <rect id="Rectangle-7" fill="#fff" x="2" y="13" width="6" height="9" rx="1">
+                                    </rect>
+                                    <rect id="Rectangle-7-Copy" fill="#fff" x="9" y="8" width="6" height="14" rx="1">
+                                    </rect>
+                                    <rect id="Rectangle-7-Copy" fill="#fff" x="16" y="15" width="6" height="7" rx="1">
+                                    </rect>
+                                    <path
+                                        d="M12,5 L10.6385399,5.71576194 C10.4755917,5.80142888 10.2740493,5.73878004 10.1883824,5.57583185 C10.1542693,5.51094502 10.1424978,5.43662233 10.1548901,5.36436978 L10.4149058,3.84836166 L9.31346143,2.77471874 C9.18163357,2.64621834 9.17893613,2.43518058 9.30743654,2.30335272 C9.35860607,2.25085818 9.42565354,2.21669578 9.49819922,2.20615428 L11.0203579,1.98497168 L11.701088,0.605661917 C11.7825621,0.440577364 11.9824374,0.372797697 12.1475219,0.454271795 C12.2132594,0.486715208 12.2664686,0.539924382 12.298912,0.605661917 L12.9796421,1.98497168 L14.5018008,2.20615428 C14.6839824,2.23262682 14.8102096,2.40177444 14.783737,2.58395606 C14.7731955,2.65650174 14.7390331,2.72354921 14.6865386,2.77471874 L13.5850942,3.84836166 L13.8451099,5.36436978 C13.8762303,5.54581527 13.7543677,5.71813391 13.5729222,5.74925425 C13.5006696,5.76164653 13.4263469,5.74987497 13.3614601,5.71576194 L12,5 Z"
+                                        id="Star" fill="#fff"></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <p class="navbar-btn-txt text-white text-lg">Leaderboard</p>
+                    </a>
+                    <button class="navbar-btn">
+                        <div class="nice-select">
+                            <span class="current single-item share flex items-center gap-x-3 relative" id="moreBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="4" height="16" viewBox="0 0 4 16"
+                                    fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2ZM0.5 8C0.5 7.17157 1.17157 6.5 2 6.5C2.82843 6.5 3.5 7.17157 3.5 8C3.5 8.82843 2.82843 9.5 2 9.5C1.17157 9.5 0.5 8.82843 0.5 8ZM0.5 14C0.5 13.1716 1.17157 12.5 2 12.5C2.82843 12.5 3.5 13.1716 3.5 14C3.5 14.8284 2.82843 15.5 2 15.5C1.17157 15.5 0.5 14.8284 0.5 14Z"
+                                        fill="white" />
+                                </svg>
+                                <p class="navbar-btn-txt text-white text-lg">More</p>
+                            </span>
+                            <ul class="nav-list p-4 absolute top-[70%] text-white rounded-lg border border-purple-300"
+                                id="moreList">
+                                <li class="text-white">Edit</li>
+                                <li>Participants</li>
+                                <li>Result</li>
+                            </ul>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="bars flex lg:hidden xl:hidden button-bg p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M0 1.25C0 0.835786 0.335786 0.5 0.75 0.5H17.25C17.6642 0.5 18 0.835786 18 1.25C18 1.66421 17.6642 2 17.25 2H0.75C0.335786 2 0 1.66421 0 1.25ZM0 5.75C0 5.33579 0.335786 5 0.75 5H17.25C17.6642 5 18 5.33579 18 5.75C18 6.16421 17.6642 6.5 17.25 6.5H0.75C0.335786 6.5 0 6.16421 0 5.75ZM0 10.25C0 9.83579 0.335786 9.5 0.75 9.5H17.25C17.6642 9.5 18 9.83579 18 10.25C18 10.6642 17.6642 11 17.25 11H0.75C0.335786 11 0 10.6642 0 10.25ZM0 14.75C0 14.3358 0.335786 14 0.75 14H17.25C17.6642 14 18 14.3358 18 14.75C18 15.1642 17.6642 15.5 17.25 15.5H0.75C0.335786 15.5 0 15.1642 0 14.75Z"
+                        fill="white" />
+                </svg>
+            </div>
+            <div class="account hidden lg:flex xl:flex gap-x-10 items-center text-white">
+                <div class="create button-bg px-4 py-2">
+                    <a href="#">Create Tournament</a>
+                </div>
+                <div class="sign flex gap-x-3">
+                    <a href="login.html" class="uppercase">Signin</a> |
+                    <a href="" class="uppercase">Signup</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="banner relative">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+            <div class="bg-[#000000] hidden lg:block"> </div>
+            <video id="hero-video" class="w-screen h-[40vh] md:h-[60vh] object-cover" autoplay muted loop>
+                <source src="assets/images/details.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="absolute bottom-[5%] left-0 right-0 flex items-center flex-col gap-y-1 md:gap-y-2 lg:gap-y-2">
+            <h1 class="text-white text-center text-xl md:text-5xl lg:text-5xl xl:text-5xl font-extrabold">Champion of
+                Virtual Realms</h1>
+            <p class="text-white text-center text-sm md:text-xl lg:text-2xl xl:text-2xl font-semibold">Crafting Legends,
+                One Game at a Time</p>
+        </div>
+    </section>
+    <section class="nav flex items-center px-10 lg:px-52 py-10">
+        <div class="container flex flex-col gap-y-3 mx-auto gradient-iii border border-purple-500 rounded-3xl p-3">
+            <div class="upper-col flex gap-x-4 items-center">
+                <div
+                    class="tournament-avatar relative flex justify-center w-16 md:w-24 h-12 md:h-24 col-span-10 md:col-span-1 rounded-full">
+                    <img src="assets/images/tournament.png" class="w-full rounded-full object-cover" alt="banner">
+                </div>
+                <div class="left-col w-full flex gap-2 items-center justify-between">
+                    <div class="title flex-col gap-2">
+                        <h5 class="text-white text-xl md:text-4xl font-bold">Foxtie Max</h5>
+                        <div class="status flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="#fff" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                            </svg>
+                            <p class="text-white font-semibold">War Bringers</p>
+                        </div>
+                    </div>
+                    <a href="#" class="edit gap-1 button-bg rounded-3xl py-2 px-2 md:px-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="block md:hidden w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                          </svg>
+                          
+                        <p class="text-sm md:text-base hidden md:block text-white font-semibold">Go Back</p>
+                    </a>
+                </div>
+            </div>
+            <div class="border border-purple-300 h-[1px] opacity-20"></div>
+            <div class="nav-box flex gap-x-8 pr-3">
+                <a class="profile-tab text-white cursor-pointer px-4 py-1 rounded-3xl text-lg"
+                    id="profile-tab">Profile</a>
+                <div class="border border-purple-300 h-8 opacity-20"></div>
+                <a class="cursor-pointer text-white px-4 py-1 rounded-3xl text-lg" id="team-tab">Team</a>
+
+            </div>
+        </div>
+    </section>
+    <section class="graphs px-10 lg:px-52">
+        <div class="container mx-auto">
+            <div class="top-container flex flex-col gap-y-4 py-5" id="profile-card">
+                <form
+                    class="w-full flex flex-col gap-4 md:gap-8 md:gap-10 gradient-iii border border-purple-500 rounded-3xl p-4 md:p-10 mx-auto">
+                    <div class="title">
+                        <h1 class="text-xl md:text-4xl font-bold text-white uppercase">Profile</h1>
+                        <p class="text-sm md:text-base text-stone-200">Player's specific profile</p>
+                    </div>
+                    <div class="file-upload-container relative flex flex-col justify-center items-center rounded-full border border-dashed border-purple-300 w-52 h-52 mx-auto mb-5">
+                        <label for="user_image" class="flex flex-col gap-y-3 md:gap-y-4 file-upload-label">
+                            <div class="file-upload-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#fff" class="w-12 h-12">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+                                </svg>                                                                    
+                            </div>
+                            <p class="text-white text-sm md:text-medium">Choose profile picture</p>
+                        </label>
+                        <input type="file" id="image" name="image" class="file-upload-input"
+                            onchange="previewImage()" />
+                       
+                        <div class="file-upload-preview">
+                            <img id="preview-image" src="" alt="Preview Image" />
+                        </div>
+                    </div>
+                    <div class="form-box grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="name" class="text-white font-semibold ml-4">Full Name</label>
+                            <input type="text" id="default-search" id="name" name="name"
+                                class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent" />
+                        </div>
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="phone" class="text-white font-semibold ml-4">Phone</label>
+                            <input type="text" id="default-search" id="phone" name="phone"
+                                class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent" />
+                        </div>
+
+                    </div>
+                    <div class="form-box grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="email" class="text-white font-semibold ml-4">Email</label>
+                            <input type="text" id="default-search" id="email" name="email"
+                                class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent" />
+                        </div>
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="email" class="text-white font-semibold ml-4">Game</label>
+                            <select id="countries"
+                                class="bg-[#3e2b6c] h-12 px-6 focus:ring-purple-500 focus:border-purple-200 w-full text-sm outline-none text-white border border-purple-300 rounded-3xl">
+                                <option selected>Choose a game</option>
+                                <option value="pubg">Pubg</option>
+                                <option value="freefire">Freefire</option>
+                                <option value="coc">Cash of Clans</option>
+                                <option value="valorant">Valorant</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="form-box grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="level" class="text-white font-semibold ml-4">Level</label>
+                            <input type="text" id="default-search" id="level" name="level"
+                                class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent" />
+                        </div>
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="uid" class="text-white font-semibold ml-4">UID</label>
+                            <input type="text" id="default-search" id="uid" name="uid"
+                                class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent" />
+                        </div>
+
+                    </div>
+
+                    <button class="button-bg text-white py-2 md:py-3 text-base md:text-lg">
+                        Update
+                    </button>
+
+                </form>
+            </div>
+            <div class="top-container flex flex-col gap-y-4 py-5" id="team-card">
+                <form
+                    class="w-full flex flex-col gap-4 md:gap-8 md:gap-10 gradient-iii border border-purple-500 rounded-3xl p-4 md:p-10 mx-auto">
+                    <div class="title">
+                        <h1 class="text-xl md:text-4xl font-bold text-white uppercase">Team</h1>
+                        <p class="text-sm md:text-base text-stone-200">Player's team information</p>
+                    </div>
+                    <div class="file-upload-container relative flex flex-col justify-center items-center rounded-full border border-dashed border-purple-300 w-52 h-52 mx-auto mb-5">
+                        <label for="user_image" class="flex flex-col gap-y-3 md:gap-y-4 file-upload-label">
+                            <div class="file-upload-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#fff" class="w-12 h-12">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+                                </svg>                                                                    
+                            </div>
+                            <p class="text-white text-sm md:text-medium">Choose team logo</p>
+                        </label>
+                        <input type="file" id="logo" name="logo" class="file-upload-input"
+                            onchange="showLogo()" />
+                       
+                        <div class="logo-upload-preview">
+                            <img id="preview-logo" src="" alt="Preview logo" />
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="team_name" class="text-white font-semibold ml-4">Team Name</label>
+                            <input type="text" id="default-search" id="team_name" name="team_name"
+                                class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent" />
+                        </div>
+                    </div>
+                    <div class="form-box grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="player 1" class="text-white font-semibold ml-4">Player A</label>
+                            <input type="text" id="default-search" id="player 1" name="player 1"
+                                class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent" />
+                        </div>
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="player 2" class="text-white font-semibold ml-4">Player B</label>
+                            <input type="text" id="default-search" id="player 2" name="player 2"
+                                class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent" />
+                        </div>
+
+                    </div>
+                    <div class="form-box grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="player 3" class="text-white font-semibold ml-4">Player C</label>
+                            <input type="text" id="default-search" id="player 3" name="player 3"
+                                class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent" />
+                        </div>
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="player 4" class="text-white font-semibold ml-4">Player D</label>
+                            <input type="text" id="default-search" id="player 4" name="player 4"
+                                class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent" />
+                        </div>
+
+                    </div>
+
+                    <button class="button-bg text-white py-2 md:py-3 text-base md:text-lg">
+                        Update
+                    </button>
+
+                </form>
+            </div>
+
+
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/profile.js"></script>
+    <script src="assets/js/image-preview.js"></script>
+
+</body>
+
+</html>

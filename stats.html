@@ -76,14 +76,16 @@
                     <button class="navbar-btn">
                         <div class="nice-select">
                             <span class="current single-item share flex items-center gap-x-3 relative" id="moreBtn">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="4" height="16" viewBox="0 0 4 16" fill="none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="4" height="16" viewBox="0 0 4 16"
+                                    fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                         d="M0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2ZM0.5 8C0.5 7.17157 1.17157 6.5 2 6.5C2.82843 6.5 3.5 7.17157 3.5 8C3.5 8.82843 2.82843 9.5 2 9.5C1.17157 9.5 0.5 8.82843 0.5 8ZM0.5 14C0.5 13.1716 1.17157 12.5 2 12.5C2.82843 12.5 3.5 13.1716 3.5 14C3.5 14.8284 2.82843 15.5 2 15.5C1.17157 15.5 0.5 14.8284 0.5 14Z"
                                         fill="white" />
                                 </svg>
                                 <p class="navbar-btn-txt text-white text-lg">More</p>
                             </span>
-                            <ul class="nav-list p-4 absolute top-[70%] text-white rounded-lg border border-purple-300" id="moreList">
+                            <ul class="nav-list p-4 absolute top-[70%] text-white rounded-lg border border-purple-300"
+                                id="moreList">
                                 <li class="text-white">Edit</li>
                                 <li>Participants</li>
                                 <li>Result</li>
@@ -111,80 +113,120 @@
         </div>
     </section>
     <section class="banner relative">
-        <video id="hero-video" class="w-screen h-[40vh] md:h-[50vh] object-cover" autoplay muted loop>
-            <source src="assets/images/register-bg.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+            <div class="bg-[#000000] hidden lg:block"> </div>
+            <video id="hero-video" class="w-screen h-[40vh] md:h-[60vh] object-cover" autoplay muted loop>
+                <source src="assets/images/details.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
         <div class="absolute bottom-[5%] left-0 right-0 flex items-center flex-col gap-y-1 md:gap-y-2 lg:gap-y-2">
-            <h1 class="text-white text-center text-xl md:text-5xl lg:text-5xl xl:text-5xl font-extrabold">Games</h1>
-            <p class="text-white text-center text-sm md:text-xl lg:text-2xl xl:text-2xl font-bold">Let's get started - choose a game</p>
+            <h1 class="text-white text-center text-xl md:text-5xl lg:text-5xl xl:text-5xl font-extrabold">Performance
+                Pulse</h1>
+            <p class="text-white text-center text-sm md:text-xl lg:text-2xl xl:text-2xl font-semibold">Unlock Your
+                Potential: Delve into Performance Insights</p>
         </div>
     </section>
-    <section class="games bg-no-repeat bg-cover">
-        <div class="container mx-auto px-10 lg:px-52 py-10 md:py-24 flex flex-col gap-y-4 md:gap-y-10">
-            <div
-                class="top-container flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between items-start md:items-center gap-4 md:gap-0">
-                <div class="title flex flex-col gap-1 md:gap-3">
-                    <h2 class="text-white text-xl md:text-5xl font-bold">Organize A Tournament</h2>
-                    <h5 class="text-white text-sm md:text-2xl">Let's get started - choose a game</h5>
+    <section class="nav flex items-center px-10 lg:px-52 py-10">
+        <div class="container flex flex-col gap-y-3 mx-auto gradient-iii border border-purple-500 rounded-3xl p-3">
+            <div class="upper-col flex gap-x-4 items-center">
+                <div
+                    class="tournament-avatar relative flex justify-center w-16 md:w-24 h-12 md:h-24 col-span-10 md:col-span-1 rounded-full">
+                    <img src="assets/images/tournament.png" class="w-28 md:w-24 h-28 md:h-24 rounded-full object-cover" alt="banner">
                 </div>
-                <div class="search">
-                    <form class="w-full">
-                        <div class="relative">
-                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                <svg class="w-4 h-4 text-purple-200" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                                </svg>
-                            </div>
-                            <input type="search" id="default-search"
-                                class="block w-full h-12 px-20 ps-10 text-sm md:text-lg outline-none text-white border border-purple-500 rounded-3xl bg-blur-lg bg-transparent"
-                                placeholder="Search for a game" />
+                <div class="left-col w-full flex gap-2 items-center justify-between">
+                    <div class="title flex-col gap-2">
+                        <h5 class="text-white text-xl md:text-4xl font-bold">Foxtie Max</h5>
+                        <div class="status flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="#fff" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                            </svg>
+                            <p class="text-white font-semibold">War Bringers</p>
                         </div>
-                    </form>
-                </div>
-            </div>
-            <div class="game-cards grid grid-cols-3 md:grid-cols-4">
-                <div class="card pr-2 md:pr-6">
-                    <a href="#"><img src="assets/images/codm.webp" class="w-full" alt="Game-1"></a>
-                </div>
-                <div class="card pr-2 md:pr-6">
-                    <a href="#">
-                        <img src="assets/images/ff.webp" class="w-full" alt="Game-1">
+                    </div>
+                    <a href="#" class="edit gap-1 button-bg rounded-3xl py-2 px-2 md:px-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="#fff" class="block md:hidden w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                        </svg>
+                        <p class="text-sm md:text-base hidden md:block text-white font-semibold">Edit Profile</p>
                     </a>
                 </div>
-                <div class="card pr-2 md:pr-6">
-                    <img src="assets/images/pubg.webp" class="w-full" alt="Game-1">
-                </div>
-                <div class="card pr-2 md:pr-6">
-                    <img src="assets/images/coc.webp" class="w-full" alt="Game-1">
-                </div>
-                <div class="card pr-2 md:pr-6">
-                    <img src="assets/images/lol.webp" class="w-full" alt="Game-1">
-                </div>
-                <div class="card pr-2 md:pr-6">
-                    <img src="assets/images/fortnite.webp" class="w-full" alt="Game-1">
-                </div>
-                <div class="card pr-2 md:pr-6">
-                    <img src="assets/images/codm.webp" class="w-full" alt="Game-1">
-                </div>
-                <div class="card pr-2 md:pr-6">
-                    <img src="assets/images/aov.webp" class="w-full" alt="Game-1">
-                </div>
             </div>
-            <div class="pagination mt-4 flex gap-2 flex-wrap justify-center">
-                <a href="./programs.html"
-                    class="h-12 w-12 flex items-center justify-center button-bg text-white font-bold border border-purple-600 rounded-full hover:bg-none hover:text-white hover:border-purple-700 hover:transition hover:duration">1</a>
-                <a href="./programs.html"
-                    class="h-12 w-12 flex items-center justify-center text-white font-bold border border-purple-600 rounded-full hover:border-purple-700 hover:transition hover:duration">2</a>
-                <a href="./programs.html"
-                    class="h-12 w-12 flex items-center justify-center text-white font-bold border border-purple-600 rounded-full hover:border-purple-700 hover:transition hover:duration">3</a>
+            <div class="border border-purple-300 h-[1px] opacity-20"></div>
+            <div class="nav-box flex gap-x-8 pr-3">
+                <a class="text-white active participants-tab cursor-pointer px-4 py-1 rounded-3xl text-lg"
+                    id="score-tab">Score</a>
+                <div class="border border-purple-300 h-8 opacity-20"></div>
+                <a class="overview-tab cursor-pointer text-white px-4 py-1 rounded-3xl text-lg" id="kills-tab">Kills</a>
+                <div class="border border-purple-300 h-8 opacity-20"></div>
+                <a class="overview-tab cursor-pointer text-white px-4 py-1 rounded-3xl text-lg"
+                    id="weekly-tab">Weekly</a>
+                <div class="border border-purple-300 h-8 opacity-20"></div>
+                <a class="overview-tab cursor-pointer text-white px-4 py-1 rounded-3xl text-lg"
+                    id="monthly-tab">Monthly</a>
             </div>
         </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <section class="graphs px-10 lg:px-52">
+        <div class="container mx-auto">
+            <div class="right-top-container flex flex-col gap-y-4 py-5" id="score-card">
+                <div class="title">
+                    <h5 class="text-white text-3xl font-semibold">Score Progress
+                    </h5>
+                    <p class="text-purple-100">Player's overall score
+                    </p>
+                </div>
+                <div class="score-box flex flex-col gap-y-4 cursor-pointer gradient-iii border border-violet-500 rounded-3xl px-4 py-5">
+                    <canvas id="score"></canvas>
+                </div>
+            </div>
+            <div class="right-top-container flex flex-col gap-y-4 py-5" id="kills-card">
+                <div class="title">
+                    <h5 class="text-white text-3xl font-semibold">Kills Progress
+                    </h5>
+                    <p class="text-purple-100">Player's overall kills
+                    </p>
+                </div>
+                <div class="kills-box flex flex-col gap-y-4 cursor-pointer gradient-iii border border-violet-500 rounded-3xl px-4 py-5">
+                    <canvas id="kills"></canvas>
+                </div>
+            </div>
+            <div class="right-top-container flex flex-col gap-y-4 py-5" id="weekly-card">
+                <div class="title">
+                    <h5 class="text-white text-3xl font-semibold">Weekly Progress
+                    </h5>
+                    <p class="text-purple-100">Player's weekly progress
+                    </p>
+                </div>
+                <div class="weekly-box flex flex-col gap-y-4 cursor-pointer gradient-iii border border-violet-500 rounded-3xl px-4 py-5">
+                    <canvas id="weekly"></canvas>
+                </div>
+            </div>
+            <div class="right-top-container flex flex-col gap-y-4 py-5" id="monthly-card">
+                <div class="title">
+                    <h5 class="text-white text-3xl font-semibold">Monthly Progress
+                    </h5>
+                    <p class="text-purple-100">Player's overall monthly
+                    </p>
+                </div>
+                <div class="monthly-box flex flex-col gap-y-4 cursor-pointer gradient-iii border border-violet-500 rounded-3xl px-4 py-5">
+                    <canvas id="monthly"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src="assets/js/profile-tabs.js"></script>
+    
 </body>
 
 </html>
