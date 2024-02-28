@@ -1,8 +1,20 @@
 
 $(document).ready(function (){
-    $("#moreBtn").click(function(event) {
-        event.stopPropagation();
-        $('#moreList').slideToggle();
+    $(".more-option").click(function(event) {
+        $('.nav-list').slideToggle();
+      });
+    $(".profile").click(function(event) {
+        $('.profile-menu').slideToggle();
+        $('.chevron').addClass("transition");
+        $('.chevron').toggleClass("rotate-180");
+      });
+    $(".mobile-profile").click(function(event) {
+        $('.mobile-profile-menu').slideToggle();
+        $('.chevron').addClass("transition");
+        $('.chevron').toggleClass("rotate-180");
+      });
+     $(".bar").click(function(event) {
+        $('.sidebar').toggleClass("sidebar-show");
       });
 
       $(".dot").click(function(event) {

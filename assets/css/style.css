@@ -29,6 +29,7 @@ html,body{
 .gradient{
     background: linear-gradient(351.09deg, #7d4df3 4.36%, #e87bf8 117.5%);
 }
+
 .gradient-ii{
     background: linear-gradient(to top, #e87bf8 , #7d4df3 );
 }
@@ -83,6 +84,9 @@ html,body{
 .rotate{
     transform: rotate(90deg);
 }
+.rotate-180{
+    transform: rotate(180deg);
+}
 .transition{
     transition: .3s ease-in;
 }
@@ -91,7 +95,7 @@ html,body{
 }
 
     
-    .file-upload-label {
+.file-upload-label {
     position: absolute;
     top: 0;
     left: 0;
@@ -105,9 +109,9 @@ html,body{
     color: #ccc;
     text-align: center;
     cursor: pointer;
-    }
+}
 
-    .file-upload-input {
+.file-upload-input {
     position: absolute;
     top: 0;
     left: 0;
@@ -115,17 +119,27 @@ html,body{
     height: 100%;
     opacity: 0;
     cursor: pointer;
-    }
-    
-    .file-upload-preview,.logo-upload-preview {
+}
+
+.file-upload-preview,.logo-upload-preview {
     width: 100%;
     display: none;
-    }
-    
-    .file-upload-preview img,.logo-upload-preview img {
+}
+
+.file-upload-preview img,.logo-upload-preview img {
     width: 100%;
     height: auto;
     border-radius: 50%;
-    }
+}
+.sidebar{
+    left: -150%;
+    overflow: auto;
+    transition: 0.8s ease;
+    transition-property: left;
+}
+.sidebar-show{
+    left:0%;
+}
 
+    
     
