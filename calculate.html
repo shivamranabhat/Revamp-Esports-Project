@@ -114,9 +114,9 @@
     </section>
     <section class="banner relative">
         <div class="grid grid-cols-1 lg:grid-cols-2">
-            <div class="bg-[#040412] hidden lg:block"> </div>
+            <div class="bg-[#000000] hidden lg:block"> </div>
             <video id="hero-video" class="w-screen h-[40vh] md:h-[60vh] object-cover" autoplay muted loop>
-                <source src="assets/images/tournament-bg.mp4" type="video/mp4">
+                <source src="assets/images/details.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -170,84 +170,90 @@
             </div>
         </div>
     </section>
-    <section class="graphs px-10 lg:px-52">
+    <section class="calculate px-10 lg:px-52">
         <div class="container mx-auto">
             <div class="right-top-container flex flex-col gap-y-4 py-5" id="overview-card">
                 <div class="title">
-                    <h5 class="text-white text-3xl font-semibold">Overview
+                    <h5 class="text-white text-3xl font-semibold">Calculate Points
                     </h5>
-                    <p class="text-purple-100">Organizer's overall tournaments
+                    <p class="text-purple-100">Decide the match and tournament winner
                     </p>
                 </div>
-                <div
-                    class="tournament-box flex bg-[#433072] border border-violet-500 rounded-3xl gap-x-4 items-center px-4 py-5">
-                    <img src="assets/images/tournament.png" class="w-14 h-14 rounded-full object-cover"
-                        alt="tournament-logo">
-                    <div class="right-col w-full flex justify-between items-center">
-                        <div class="tournament-name flex flex-col">
-                            <h5 class="text-white text-base md:text-lg text-semibold">Team Howlers</h5>
-                            <p class="text-white text-sm">Participants: 5</p>
+                
+                <form class="w-full flex flex-col gap-4 md:gap-8 md:gap-10 gradient-iii border border-purple-500 rounded-3xl px-4 py-5 mx-auto">
+                   
+                    <div class="form-box grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="name" class="text-white font-semibold ml-4">Player Name</label>
+                            <input type="text" id="name" name="name" class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent">
                         </div>
-                        <div class="options relative">
-                            <span class="dot single-item cursor-pointer flex items-center gap-x-3 ">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="4" height="16" viewBox="0 0 4 16"
-                                    fill="none">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2ZM0.5 8C0.5 7.17157 1.17157 6.5 2 6.5C2.82843 6.5 3.5 7.17157 3.5 8C3.5 8.82843 2.82843 9.5 2 9.5C1.17157 9.5 0.5 8.82843 0.5 8ZM0.5 14C0.5 13.1716 1.17157 12.5 2 12.5C2.82843 12.5 3.5 13.1716 3.5 14C3.5 14.8284 2.82843 15.5 2 15.5C1.17157 15.5 0.5 14.8284 0.5 14Z"
-                                        fill="white"></path>
-                                </svg>
-                                <ul
-                                    class="list p-4 flex flex-col gap-y-3 absolute top-[30%] right-0 bg-[#322557] text-white rounded-lg shadow-lg">
-                                    <li class="text-white hover:text-violet-200 ease-in duration-100 cursor-pointer">
-                                        <a href="result.html" class="flex gap-x-2"><span
-                                                class="bg-[#433072] border border-violet-500 p-1 rounded-lg">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"
-                                                    class="w-4 h-4">
-                                                    <path
-                                                        d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" />
-                                                    <path
-                                                        d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />
-                                                </svg>
-                                            </span>
-                                            Edit</a>
-                                    </li>
-                                   
-                                    <li class="text-white hover:text-violet-200 ease-in duration-100 cursor-pointer">
-                                        <a href="result.html" class="flex gap-x-2"><span
-                                                class="bg-[#433072] border border-violet-500 p-1 rounded-lg">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="#fff" class="w-4 h-4">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z">
-                                                    </path>
-                                                </svg>
-                                            </span>
-                                            Result</a>
-                                    </li>
-                                    <li class="text-white hover:text-violet-200 ease-in duration-100 cursor-pointer">
-                                        <a href="result.html" class="flex gap-x-2"><span
-                                                class="bg-[#433072] border border-violet-500 p-1 rounded-lg">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"
-                                                    class="w-4 h-4">
-                                                    <path fill-rule="evenodd"
-                                                        d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z"
-                                                        clip-rule="evenodd" />
-                                                    <path
-                                                        d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
-                                                </svg>
-
-                                            </span>
-                                            Participants</a>
-                                    </li>
-
-                                </ul>
-                            </span>
-
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="kills" class="text-white font-semibold ml-4">Kills</label>
+                            <input type="text" id="kills" name="kills" class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent">
                         </div>
+                       
+                    </div>
+                    <div class="form-box grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="name" class="text-white font-semibold ml-4">Player Name</label>
+                            <input type="text" id="name" name="name" class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent">
+                        </div>
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="kills" class="text-white font-semibold ml-4">Kills</label>
+                            <input type="text" id="kills" name="kills" class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent">
+                        </div>
+                       
+                    </div>
+                    <div class="form-box grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="name" class="text-white font-semibold ml-4">Player Name</label>
+                            <input type="text" id="name" name="name" class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent">
+                        </div>
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="kills" class="text-white font-semibold ml-4">Kills</label>
+                            <input type="text" id="kills" name="kills" class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent">
+                        </div>
+                       
+                    </div>
+                    <div class="form-box grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="name" class="text-white font-semibold ml-4">Player Name</label>
+                            <input type="text" id="name" name="name" class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent">
+                        </div>
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="kills" class="text-white font-semibold ml-4">Kills</label>
+                            <input type="text" id="kills" name="kills" class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent">
+                        </div>
+                       
+                    </div>
+                    
+                    <div class="form-box grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="placement" class="text-white font-semibold ml-4">Placement</label>
+                            <input type="text" id="placement" name="placement" class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent">
+                        </div>
+                        <div class="input-box flex flex-col gap-y-1">
+                            <label for="match_no" class="text-white font-semibold ml-4">Match</label>
+                            <select id="match_no" name="match_no" class="bg-[#3e2b6c] h-12 px-6 focus:ring-purple-500 focus:border-purple-200 w-full text-sm outline-none text-white border border-purple-300 rounded-3xl">
+                                <option value="#">Select Match No</option>
+                                <option value="match_1">Match 1</option>
+                                <option value="match_2">Match 2</option>
+                                <option value="match_3">Match 3</option>
+                                <option value="match_4">Match 4</option>
+                                <option value="match_5">Match 5</option>
+                                <option value="match_6">Match 6</option>
+                            </select>
+                        </div>
+                      
                     </div>
 
-                </div>
+                    <button class="button-bg text-white py-2 md:py-3 text-base md:text-lg">
+                        Publish
+                    </button>
+
+                </form>
             </div>
+
             <div class="right-top-container flex flex-col gap-y-4 py-5" id="create-card">
                 <div class="title">
                     <h5 class="text-white text-3xl font-semibold">Create Tournament
@@ -255,70 +261,69 @@
                     <p class="text-purple-100">Choose a game and create tournament
                     </p>
                 </div>
-                
-                <form class="w-full flex flex-col gap-4 md:gap-8 md:gap-10 gradient-iii border border-purple-500 rounded-3xl px-4 py-5 mx-auto">
-                    <div class="image-preview flex justify-center">
-                        <span class="w-52 h-52 flex items-center text-sm text-white border border-purple-300 rounded-full p-2">
-                            <img src="" class="rounded-full w-full h-full object-cover">
-                        </span>
+                <div
+                    class="create-box flex flex-col gap-y-4 cursor-pointer gradient-iii border border-violet-500 rounded-3xl px-4 py-5">
+                    <div class="flex flex-col gap-y-4">
+                        <div class="search">
+                            <form class="w-full md:w-1/2">
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                        <svg class="w-4 h-4 text-purple-200" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                        </svg>
+                                    </div>
+                                    <input type="search" id="default-search"
+                                        class="block w-full h-12 px-20 ps-10 text-sm md:text-lg outline-none text-white border border-purple-500 rounded-3xl bg-blur-lg bg-transparent"
+                                        placeholder="Search for a game" />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="game-cards grid grid-cols-3 md:grid-cols-6">
+                            <div class="card pr-2 md:pr-6">
+                                <a href="#"><img src="assets/images/codm.webp" class="w-full" alt="Game-1"></a>
+                            </div>
+                            <div class="card pr-2 md:pr-6">
+                                <a href="#">
+                                    <img src="assets/images/ff.webp" class="w-full" alt="Game-1">
+                                </a>
+                            </div>
+                            <div class="card pr-2 md:pr-6">
+                                <img src="assets/images/pubg.webp" class="w-full" alt="Game-1">
+                            </div>
+                            <div class="card pr-2 md:pr-6">
+                                <img src="assets/images/coc.webp" class="w-full" alt="Game-1">
+                            </div>
+                            <div class="card pr-2 md:pr-6">
+                                <img src="assets/images/lol.webp" class="w-full" alt="Game-1">
+                            </div>
+                            <div class="card pr-2 md:pr-6">
+                                <img src="assets/images/fortnite.webp" class="w-full" alt="Game-1">
+                            </div>
+                            <div class="card pr-2 md:pr-6">
+                                <img src="assets/images/codm.webp" class="w-full" alt="Game-1">
+                            </div>
+                            <div class="card pr-2 md:pr-6">
+                                <img src="assets/images/aov.webp" class="w-full" alt="Game-1">
+                            </div>
+                            <div class="card pr-2 md:pr-6">
+                                <img src="assets/images/aov.webp" class="w-full" alt="Game-1">
+                            </div>
+                            <div class="card pr-2 md:pr-6">
+                                <img src="assets/images/aov.webp" class="w-full" alt="Game-1">
+                            </div>
+                            <div class="card pr-2 md:pr-6">
+                                <img src="assets/images/aov.webp" class="w-full" alt="Game-1">
+                            </div>
+                        </div>
+                        <div class="pagination mt-4 flex gap-2 flex-wrap justify-center">
+                            <a href="./programs.html" class="button-bg text-white font-bold rounded-full px-4 py-2">Load
+                                More</a>
+                        </div>
                     </div>
-                    <div class="form-box flex flex-col gap-y-1">
-                        <label for="banner" class="text-white font-semibold ml-4">Tournament Banner</label>
-                        <input class=" w-full px-6 py-2 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent" id="banner" name="banner" type="file">
-                    </div>
-                    <div class="form-box grid grid-cols-1 md:grid-cols-4 gap-4">
-                        <div class="input-box cols-span-1 md:col-span-2 flex flex-col gap-y-1">
-                            <label for="name" class="text-white font-semibold ml-4">Tournament Name</label>
-                            <input type="text" id="name" name="name" class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent">
-                        </div>
-                        <div class="input-box flex flex-col gap-y-1">
-                            <label for="fees" class="text-white font-semibold ml-4">Entry Fees</label>
-                            <input type="text" id="fees" name="fees" class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent">
-                        </div>
-                        <div class="input-box flex flex-col gap-y-1">
-                            <label for="type" class="text-white font-semibold ml-4">Type</label>
-                            <select id="type" class="bg-[#3e2b6c] h-12 px-6 focus:ring-purple-500 focus:border-purple-200 w-full text-sm outline-none text-white border border-purple-300 rounded-3xl">
-                                <option value="solo">Solo</option>
-                                <option value="duo">Duo</option>
-                                <option value="squad">Squad</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box grid grid-cols-1 md:grid-cols-4 gap-4">
-                        <div class="input-box cols-span-1 md:col-span-2 flex flex-col gap-y-1">
-                            <label for="closing_time" class="text-white font-semibold ml-4">Closing time</label>
-                            <input type="text" id="closing_time" name="closing_time" class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent">
-                        </div>
-                        <div class="input-box flex flex-col gap-y-1">
-                            <label for="team_size" class="text-white font-semibold ml-4">Total Slot</label>
-                            <input type="text" id="team_size" name="team_size" class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent">
-                        </div>
-                        <div class="input-box flex flex-col gap-y-1">
-                            <label for="prize_pool" class="text-white font-semibold ml-4">Prize Pool</label>
-                            <input type="text" id="prize_pool" name="prize_pool" class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent">
-                        </div>
-                    </div>
-                    <div class="form-box grid grid-cols-1 md:grid-cols-4 gap-4">
-                        <div class="input-box cols-span-1 md:col-span-2 flex flex-col gap-y-1">
-                            <label for="first_prize" class="text-white font-semibold ml-4">1st prize</label>
-                            <input type="text" id="first_prize" name="first_prize" class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent">
-                        </div>
-                        <div class="input-box flex flex-col gap-y-1">
-                            <label for="second_prize" class="text-white font-semibold ml-4">2nd prize</label>
-                            <input type="text" id="second_prize" name="second_prize" class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent">
-                        </div>
-                        <div class="input-box flex flex-col gap-y-1">
-                            <label for="third_prize" class="text-white font-semibold ml-4">3rd prize</label>
-                            <input type="text" id="third_prize" name="third_prize" class="block w-full h-12 px-6 ps-10 text-sm md:text-lg outline-none text-white border border-purple-300 rounded-3xl bg-blur-lg bg-transparent">
-                        </div>
-
-                    </div>
-
-                    <button class="button-bg text-white py-2 md:py-3 text-base md:text-lg">
-                        Create
-                    </button>
-
-                </form>
+                </div>
+               
             </div>
             <div class="right-top-container flex flex-col gap-y-4 py-5" id="points-card">
                 <div class="title">
